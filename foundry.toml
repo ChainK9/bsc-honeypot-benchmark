@@ -1,0 +1,15 @@
+# Trap-token fixtures. Only ever deployed on local forks and BSC testnet.
+[profile.default]
+src = "src"
+out = "out"
+libs = []
+solc_version = "0.8.24"
+# paris = no PUSH0 and friends, so the bytecode runs on any EVM version the fork picks.
+evm_version = "paris"
+optimizer = true
+# Only the testnet deploy script writes files, and only here.
+fs_permissions = [{ access = "write", path = "deployments" }]
+
+# Fixtures are deliberately tiny and sometimes deliberately bad; style lints are noise here.
+[lint]
+lint_on_build = false
